@@ -94,7 +94,6 @@ def strayOff(systray):
 port = 6668
 stop = False
 sip = configFile()
-
 ipSalvoResposta = False
 if sip != None and len(sip) >= 7:
     ipSalvoResposta = ipSalvo(sip)
