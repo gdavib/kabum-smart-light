@@ -19,9 +19,6 @@ def desligar(socket):
     socket.send(b1)
     socket.close()
 
-
-
-
 def ligar(socket):
     print("[+]Ligando...")
     b1 = b"\x28\x6d\xcd\x42\x07\x55\x08\x00\x27\x8d\x68\x4f\x08\x00\x45\x00" \
@@ -34,8 +31,10 @@ def ligar(socket):
     b"\x86\xfb\xdc\xba\xab\x9c\xe9\xec\x67\x00\x00\xaa\x55"
     socket.send(b1)
     socket.close()
+    
 def errmsg():
     print("Por favor, use: " + __file__.split("\\")[-1] + " [on|off]")
+    
 def getIp(ipTail):
     ipTail = str(ipTail)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -62,7 +61,6 @@ def getIp(ipTail):
     else:
         return False
     
-
 port = 6668
 o, i, n = (None,)*3
 try:
@@ -71,7 +69,6 @@ try:
     n = i if getIp(i) else False
 except:
     pass
-
 
 if not n:
     for x in range(2,255):
